@@ -1,0 +1,129 @@
+#testimonials,
+#reviews {
+    background-color: #FFFFFF;
+    padding: 100px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#testimonials .testimonials-container,
+#reviews .testimonials-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#testimonials .testimonials-header,
+#reviews .testimonials-header {
+    text-align: center;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+#testimonials .testimonials-cards-wrapper,
+#reviews .testimonials-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#testimonials .testimonial-card,
+#reviews .testimonial-card {
+    background-color: #1B1B1B;
+    border-radius: 15px;
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+#testimonials .testimonial-quote,
+#reviews .testimonial-quote {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.6;
+}
+
+#testimonials .testimonial-divider,
+#reviews .testimonial-divider {
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+    margin: 0;
+}
+
+#testimonials .testimonial-attribution,
+#reviews .testimonial-attribution {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Medium screens: constrain width a bit more for nicer columns */
+@media (max-width: 1024px) {
+    #testimonials,
+    #reviews {
+        padding: 80px 24px;
+    }
+
+    #testimonials .testimonial-card,
+    #reviews .testimonial-card {
+        max-width: 420px;
+    }
+}
+
+/* Mobile: single column, comfortable padding and font sizes */
+@media (max-width: 768px) {
+    #testimonials,
+    #reviews {
+        padding: 60px 16px;
+    }
+
+    #testimonials .testimonials-header,
+    #reviews .testimonials-header {
+        margin-bottom: 40px;
+    }
+
+    #testimonials .testimonials-cards-wrapper,
+    #reviews .testimonials-cards-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    #testimonials .testimonial-card,
+    #reviews .testimonial-card {
+        max-width: 100%;
+        width: 100%;
+        min-width: 0; /* prevent cards from forcing horizontal overflow on small screens */
+        box-sizing: border-box;
+        padding: 28px 22px;
+    }
+
+    #testimonials .testimonial-quote,
+    #reviews .testimonial-quote {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    #testimonials .testimonial-attribution,
+    #reviews .testimonial-attribution {
+        font-size: 13px;
+    }
+}
+

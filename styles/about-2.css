@@ -1,0 +1,167 @@
+#about-2 {
+  background-color: #FFFFFF;
+  padding: 80px 16px;
+}
+
+#about-2 .about-2-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#about-2 .about-2-panel {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+}
+
+#about-2 .about-2-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  padding: 40px 20px;
+}
+
+#about-2 .card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#about-2 .card-revealed {
+  width: 170px;
+  aspect-ratio: 63 / 88;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #848484;
+}
+
+#about-2 .card-top {
+  background-color: #E5E5E5;
+  padding: 20px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+#about-2 .card-logo {
+  width: 40px;
+  height: 40px;
+  background-color: #2B2B2B;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#about-2 .card-company-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: #000000;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#about-2 .card-bottom {
+  background-color: #1B1B1B;
+  padding: 24px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+#about-2 .card-metric {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  color: #55E6A5;
+  line-height: 1;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(85, 230, 165, 0.5);
+}
+
+#about-2 .card-metric-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+#about-2 .about-2-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#about-2 .about-2-right .smol-blk,
+#about-2 .about-2-right .headline-blk,
+#about-2 .about-2-right .content-blk {
+  max-width: 100%;
+}
+
+@media (max-width: 968px) {
+  #about-2 {
+    padding: 60px 16px;
+  }
+
+  #about-2 .about-2-panel {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  #about-2 .about-2-left {
+    order: 2;
+  }
+
+  #about-2 .about-2-right {
+    order: 1;
+    text-align: center;
+    align-items: center;
+  }
+
+  #about-2 .about-2-right .smol-blk,
+  #about-2 .about-2-right .headline-blk,
+  #about-2 .about-2-right .content-blk {
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  #about-2 {
+    padding: 40px 16px;
+  }
+
+  #about-2 .about-2-panel {
+    gap: 40px;
+  }
+
+  #about-2 .card-revealed {
+    width: 100px;
+    aspect-ratio: 63 / 88;
+  }
+
+  #about-2 .card-metric {
+    font-size: 32px;
+  }
+
+  #about-2 .card-company-name {
+    font-size: 9px;
+  }
+}
+

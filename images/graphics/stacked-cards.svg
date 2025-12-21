@@ -1,0 +1,43 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow filter for front card -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Dark green gradient for back cards -->
+    <linearGradient id="darkGreenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a5a3f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3d29;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Back card 3 (furthest back) -->
+  <rect x="420" y="120" width="140" height="200" rx="12" fill="url(#darkGreenGradient)" opacity="0.6" transform="rotate(-8 490 220)"/>
+  
+  <!-- Back card 2 -->
+  <rect x="40" y="80" width="140" height="200" rx="12" fill="url(#darkGreenGradient)" opacity="0.7" transform="rotate(6 110 180)"/>
+  
+  <!-- Back card 1 (closest to front) -->
+  <rect x="480" y="100" width="140" height="200" rx="12" fill="url(#darkGreenGradient)" opacity="0.8" transform="rotate(-4 550 200)"/>
+  
+  <!-- Front card (center card with glow) - this will have the video -->
+  <rect x="210" y="60" width="180" height="280" rx="16" fill="#55E6A5" filter="url(#glow)"/>
+  
+  <!-- Video frame outline (subtle border for where video will be embedded) -->
+  <rect x="220" y="70" width="160" height="260" rx="12" fill="none" stroke="#1B1B1B" stroke-width="2" opacity="0.3"/>
+</svg>
+
