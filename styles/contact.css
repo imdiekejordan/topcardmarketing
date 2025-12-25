@@ -1,0 +1,178 @@
+#contact-hero {
+  background-color: #000000;
+  background-image: 
+    linear-gradient(#212121 1px, transparent 1px),
+    linear-gradient(90deg, #212121 1px, transparent 1px);
+  background-size: 50px 50px;
+  padding: 80px 16px 40px;
+
+}
+
+#contact-hero .contact-hero-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#contact-hero .contact-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+#contact-hero .headline {
+  color: var(--primary);
+}
+
+#contact-form {
+  background-color: #000000;
+  padding: 40px 16px 80px 16px;
+  overflow-x: hidden;
+}
+
+#contact-form .contact-form-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#contact-form .contact-form-panel {
+  background-color: #1B1B1B;
+  border: 1px solid #848484;
+  border-radius: 20px;
+  padding: 40px 20px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#contact-form .calendly-inline-widget {
+  width: 100%;
+  max-width: 100%;
+  height: 700px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#contact-form .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#contact-form .form-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#contact-form .form-input,
+#contact-form .form-textarea {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding: 14px 16px;
+  border: 1px solid #848484;
+  border-radius: 8px;
+  background-color: #000000;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#contact-form .form-input:focus,
+#contact-form .form-textarea:focus {
+  outline: none;
+  border-color: #55E6A5;
+}
+#contact-form .form-input:-webkit-autofill,
+#contact-form .form-input:-webkit-autofill:hover,
+#contact-form .form-input:-webkit-autofill:focus,
+#contact-form .form-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #000000 inset !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  box-shadow: 0 0 0 30px #000000 inset !important;
+  caret-color: #FFFFFF;
+}
+
+#contact-form .form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+#contact-form .form-submit {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+
+@media (max-width: 968px) {
+  #contact-hero {
+    padding: 60px 16px 30px;
+  }
+
+  #contact-hero .contact-hero-content {
+    gap: 20px;
+  }
+
+  #contact-form {
+    padding: 30px 16px 80px 16px;
+  }
+
+  #contact-form .contact-form-panel {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact-hero {
+    padding: 50px 16px 20px;
+  }
+
+  #contact-hero .contact-hero-content {
+    gap: 16px;
+  }
+
+  #contact-form {
+    padding: 20px 16px 80px 16px;
+  }
+
+  #contact-form .contact-form-panel {
+    padding: 30px 20px;
+  }
+
+  #contact-form .calendly-inline-widget {
+    height: 650px;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact-hero {
+    padding: 40px 16px 16px;
+  }
+
+  #contact-form .contact-form-panel {
+    padding: 20px 16px;
+  }
+
+  #contact-form .calendly-inline-widget {
+    height: 600px;
+    min-width: 280px;
+  }
+}
+

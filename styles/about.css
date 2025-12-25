@@ -1,0 +1,312 @@
+#about {
+    background-color: #000000;
+    padding: 50px 0px 100px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .about-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#about .about-panel {
+    background-color: #1B1B1B;
+    border: 1px solid #848484;
+    border-radius: 20px;
+    padding: 60px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: center;
+}
+
+#about .about-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .about-cards-image {
+    width: 100%;
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+#about .about-video-trigger {
+    cursor: pointer;
+    pointer-events: auto;
+    user-select: none;
+    transition: opacity 0.2s ease;
+}
+
+#about .about-video-trigger:hover {
+    opacity: 0.9;
+}
+
+#about .about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#about .about-description {
+    max-width: 100%;
+}
+
+#about .quote-box {
+    background-color: black;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#about .quote-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.6;
+}
+
+#about .quote-attribution {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+@media (max-width: 968px) {
+    #about .about-panel {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 50px 40px;
+    }
+
+    #about .about-left {
+        order: 2;
+    }
+
+    #about .about-right {
+        order: 1;
+    }
+
+    #about .about-cards-image {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+
+    #about .about-panel {
+        padding: 40px 30px;
+        gap: 30px;
+        border-radius: 15px;
+    }
+
+    #about .about-left {
+        order: 2;
+    }
+
+    #about .about-right {
+        order: 1;
+        gap: 20px;
+    }
+
+    #about .about-cards-image {
+        max-height: 350px;
+    }
+
+    #about .quote-box {
+        padding: 25px 20px;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    #about {
+        padding: 40px 0;
+    }
+
+    #about .about-container {
+        padding: 0 1rem;
+    }
+
+    #about .about-panel {
+        padding: 30px 20px;
+        gap: 25px;
+        border-radius: 12px;
+    }
+
+    #about .about-left {
+        order: 2;
+    }
+
+    #about .about-right {
+        order: 1;
+        gap: 18px;
+    }
+
+    #about .about-cards-image {
+        max-height: 280px;
+    }
+
+    #about .quote-box {
+        padding: 20px 15px;
+        border-radius: 10px;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #about {
+        padding: 30px 0;
+    }
+
+    #about .about-panel {
+        padding: 25px 16px;
+        gap: 20px;
+    }
+
+    #about .about-cards-image {
+        max-height: 240px;
+    }
+
+    #about .quote-box {
+        padding: 18px 12px;
+        gap: 12px;
+    }
+}
+
+/* YouTube Video Modal Styles */
+.youtube-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.youtube-modal.active {
+    display: flex;
+}
+
+.youtube-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.youtube-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    aspect-ratio: 9 / 16;
+    z-index: 10001;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.youtube-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 10002;
+    line-height: 1;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.youtube-modal-close:hover {
+    color: #55E6A5;
+}
+
+.youtube-video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.youtube-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.youtube-fallback {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #848484;
+}
+
+.youtube-watch-button {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .youtube-modal-content {
+        width: 60%;
+        max-width: 350px;
+    }
+
+    .youtube-modal-close {
+        top: -35px;
+        font-size: 35px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .youtube-modal-content {
+        width: 70%;
+        max-width: 300px;
+    }
+
+    .youtube-modal-close {
+        top: -30px;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+    }
+}
+

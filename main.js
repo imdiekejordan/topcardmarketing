@@ -80,9 +80,15 @@ dropdownItems.forEach((dropdown) => {
     
     // Handle click on the trigger only (not the dropdown links)
     dropdownTrigger.addEventListener("click", (e) => {
+      // Prevent default for Services link (href="#") on all screen sizes
+      const clickedLink = e.target.closest('a');
+      if (clickedLink && clickedLink.classList.contains('nav-link') && clickedLink.getAttribute('href') === '#') {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      
       if (isMobile()) {
         // Only prevent default if clicking the trigger link, not dropdown links
-        const clickedLink = e.target.closest('a');
         if (clickedLink && clickedLink.classList.contains('nav-link')) {
           e.preventDefault();
           e.stopPropagation();
@@ -105,6 +111,74 @@ dropdownItems.forEach((dropdown) => {
       if (isMobile() && !dropdown.contains(e.target)) {
         dropdown.classList.remove("dropdown-open");
       }
+    });
+  }
+});
+
+// YouTube Video Modal Functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const aboutVideoTrigger = document.querySelector(".about-video-trigger");
+  const youtubeModal = document.getElementById("youtube-modal");
+  const youtubeModalClose = document.querySelector(".youtube-modal-close");
+  const youtubeModalOverlay = document.querySelector(".youtube-modal-overlay");
+  const youtubeVideoIframe = document.getElementById("youtube-video-iframe");
+
+  // Extract video ID from YouTube URL (handles regular videos and Shorts)
+  const youtubeUrl = "https://www.youtube.com/shorts/D-KhLwijtbQ";
+  const getVideoId = (url) => {
+    // Match regular videos, Shorts, youtu.be links, and embed URLs
+    const match = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([^&\n?#]+)/);
+    return match ? match[1] : null;
+  };
+
+  const youtubeVideoId = getVideoId(youtubeUrl) || "D-KhLwijtbQ";
+  // Use YouTube embed URL with parameters to minimize UI elements
+  // Note: YouTube's embed player will always show some basic info, but these parameters minimize it
+  const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0&modestbranding=1&controls=1&iv_load_policy=3&cc_load_policy=0&fs=1&playsinline=1&origin=${window.location.origin}`;
+
+  if (aboutVideoTrigger && youtubeModal && youtubeVideoIframe) {
+    console.log("YouTube modal elements found, setting up event listeners");
+    
+    // Close modal function
+    const closeModal = () => {
+      youtubeModal.classList.remove("active");
+      youtubeVideoIframe.src = ""; // Stop video playback
+      document.body.style.overflow = ""; // Restore scrolling
+    };
+
+    // Open modal when clicking on the video image
+    aboutVideoTrigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("Video image clicked, opening modal");
+      // Set iframe source
+      youtubeVideoIframe.src = youtubeEmbedUrl;
+      youtubeModal.classList.add("active");
+      document.body.style.overflow = "hidden"; // Prevent background scrolling
+      console.log("Modal should be visible now");
+    });
+
+    // Close on close button click
+    if (youtubeModalClose) {
+      youtubeModalClose.addEventListener("click", closeModal);
+    }
+
+    // Close on overlay click
+    if (youtubeModalOverlay) {
+      youtubeModalOverlay.addEventListener("click", closeModal);
+    }
+
+    // Close on Escape key press
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && youtubeModal.classList.contains("active")) {
+        closeModal();
+      }
+    });
+  } else {
+    console.error("YouTube modal elements not found:", {
+      aboutVideoTrigger: !!aboutVideoTrigger,
+      youtubeModal: !!youtubeModal,
+      youtubeVideoIframe: !!youtubeVideoIframe
     });
   }
 });

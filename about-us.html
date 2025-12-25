@@ -23,7 +23,7 @@
     <style>
       #us-map {
         background-color: #FFFFFF;
-        padding: 120px 16px;
+        padding: 60px 16px;
         overflow: visible;
       }
 
@@ -36,7 +36,11 @@
 
       #us-map .map-header {
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
       }
 
       #us-map .map-header .content-blk {
@@ -48,7 +52,7 @@
       #us-map .map-wrapper {
         position: relative;
         width: 100%;
-        max-width: 800px;
+        max-width: 600px;
         margin: 0 auto;
         padding: 40px 20px;
         overflow: visible;
@@ -56,7 +60,7 @@
 
       #us-map .map-svg {
         width: 100%;
-        max-width: 800px;
+        max-width: 600px;
         height: auto;
         display: block;
         margin: 0 auto;
@@ -65,11 +69,11 @@
 
       @media (max-width: 768px) {
         #us-map {
-          padding: 80px 16px;
+          padding: 40px 16px;
         }
 
         #us-map .map-header {
-          margin-bottom: 50px;
+          margin-bottom: 25px;
         }
 
         #us-map .map-wrapper {
@@ -77,6 +81,37 @@
         }
       }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Top Card Marketing",
+      "url": "https://topcardmarketing.com",
+      "logo": "https://topcardmarketing.com/images/logos/logo.png",
+      "description": "Full service digital marketing agency that helps small businesses grow their online presence and reach their target audience.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Duluth",
+        "addressRegion": "MN",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "url": "https://topcardmarketing.com/contact-us.html"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "About Us | Top Card Marketing",
+      "description": "Learn about Top Card Marketing, a full service digital marketing agency in Duluth, MN.",
+      "url": "https://topcardmarketing.com/about-us.html",
+      "inLanguage": "en-US"
+    }
+    </script>
   </head>
   <body>
     <header id="header"> 
@@ -101,7 +136,7 @@
                 </li>
                 <li class="nav-full dropdown">
                   <div class="nav-item">
-                    <a href="/about-us.html" class="nav-link">Services</a>
+                    <a href="#" class="nav-link">Services</a>
                     <div class="triangle"></div>
                   </div>
                   <ul class="dropdown-menu">
@@ -135,13 +170,13 @@
       <div class="service-hero-container">
         <div class="service-hero-content">
           <div class="service-hero-left">
-            <p class="smol">ABOUT TOP CARD MARKETING</p>
-            <h1 class="xl-headline">HELPING SMALL BUSINESSES<br/>STAND OUT FROM THE CROWD</h1>
+            <h1 class="smol">ABOUT TOP CARD MARKETING</h1>
+            <h2 class="xl-headline">HELPING SMALL BUSINESSES<br/>STAND OUT FROM THE CROWD</h2>
             <p class="content service-hero-description">We're a full-service digital marketing agency dedicated to helping small businesses grow their online presence, reach their target audience, and achieve their marketing goals.</p>
             <a href="/contact-us.html" class="button">Schedule Intro Call</a>
           </div>
           <div class="service-hero-right">
-            <img src="/images/graphics/about-cards.png" alt="About Top Card Marketing" class="service-hero-cards-image" />
+            <img src="/images/graphics/about-video.png" alt="About Top Card Marketing" class="service-hero-cards-image" />
           </div>
         </div>
       </div>
@@ -162,7 +197,7 @@
       <div class="testimonials-container">
         <div class="testimonials-header">
           <p class="smol-blk">CUSTOMER TESTIMONIALS</p>
-          <h2 class="headline-blk">AND THEY SEEM TO LIKE WHAT WE DO</h2>
+          <h2 class="headline-blk">HEAR DIRECTLY FROM THE CLIENTS WE'VE HELPED</h2>
         </div>
         <div class="testimonials-cards-wrapper">
           <div class="testimonial-card">
@@ -182,12 +217,12 @@
       <div class="cta-container">
         <div class="cta-panel">
           <div class="cta-left">
-            <img src="/images/graphics/marketing-audit.png" alt="Laptop" class="cta-image" />
+            <h2 class="headline">Ready to Grow Your Business?</h2>
+            <p class="content cta-description">Let's work together to transform your online presence and drive real results. Schedule a free intro call to discuss how we can help your business stand out from the competition.</p>
+            <a href="/contact-us.html" class="button cta-button">Schedule Intro Call</a>
           </div>
           <div class="cta-right">
-            <h2 class="xl-headline">Unlock Your Free<br/>Marketing Audit</h2>
-            <p class="content cta-description">Most business know they need to fix their marketing, but have no idea where to start. We sit down with you and show you the current status of your marketing and where to put your efforts next.</p>
-            <a href="/contact-us.html" class="button cta-button">Get My Free Audit</a>
+            <img src="/images/graphics/services/website.png" alt="Website illustration" class="cta-image" />
           </div>
         </div>
       </div>
