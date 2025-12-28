@@ -26,20 +26,34 @@
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Marketing Plans",
+      "name": "Marketing Plans",
       "provider": {
         "@type": "Organization",
         "name": "Top Card Marketing",
-        "url": "https://topcardmarketing.com"
+        "url": "https://topcardmarketing.com",
+        "logo": "https://topcardmarketing.com/images/logos/logo.png",
+        "image": "https://topcardmarketing.com/images/logos/logo.png"
       },
-      "areaServed": {
-        "@type": "City",
-        "name": "Duluth",
-        "containedIn": {
-          "@type": "State",
-          "name": "Minnesota"
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Duluth",
+          "containedIn": {
+            "@type": "State",
+            "name": "Minnesota"
+          }
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
         }
+      ],
+      "serviceArea": {
+        "@type": "Country",
+        "name": "United States"
       },
-      "description": "Choose from our flexible marketing plans designed to help businesses of all sizes grow their online presence and reach their goals."
+      "description": "Choose from our flexible marketing plans designed to help businesses of all sizes grow their online presence and reach their goals.",
+      "category": "Digital Marketing Services"
     }
     </script>
     <script type="application/ld+json">
@@ -50,6 +64,23 @@
       "description": "Choose from our flexible marketing plans designed to help businesses of all sizes grow their online presence.",
       "url": "https://topcardmarketing.com/top-card-plans.html",
       "inLanguage": "en-US"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://topcardmarketing.com"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Top Card Plans",
+        "item": "https://topcardmarketing.com/top-card-plans.html"
+      }]
     }
     </script>
   </head>
@@ -82,7 +113,7 @@
                   <ul class="dropdown-menu">
                     <li class="dropdown-item"><a href="/website-design.html" class="dropdown-link">Website Creation</a></li>
                     <li class="dropdown-item"><a href="/seo.html" class="dropdown-link">Search Engine Optimization</a></li>
-                    <li class="dropdown-item"><a href="/ppc.html" class="dropdown-link">Paid Ads</a></li>
+                    <li class="dropdown-item"><a href="/paid-media.html" class="dropdown-link">Paid Ads</a></li>
                     <li class="dropdown-item"><a href="/graphic-design.html" class="dropdown-link">Graphic Design</a></li>
                     <li class="dropdown-item"><a href="/branding.html" class="dropdown-link">Branding</a></li>
                     <li class="dropdown-item"><a href="/content-creation.html" class="dropdown-link">Content Creation</a></li>
