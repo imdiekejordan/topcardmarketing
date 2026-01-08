@@ -1,0 +1,109 @@
+#service-hero {
+    background-color: #000000;
+    background-image: 
+        linear-gradient(#212121 1px, transparent 1px),
+        linear-gradient(90deg, #212121 1px, transparent 1px);
+    background-size: 50px 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 60px 20px 100px 20px;
+    box-shadow: inset 0px -150px 150px -30px #000000;
+}
+
+#service-hero .service-hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+#service-hero .service-hero-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+#service-hero .service-hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+#service-hero .service-hero-description {
+    max-width: 600px;
+}
+
+#service-hero .service-hero-right {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#service-hero .service-hero-cards-image {
+    width: 100%;
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 968px) {
+    #service-hero .service-hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    #service-hero .service-hero-left {
+        text-align: center;
+        align-items: center;
+    }
+    #service-hero .service-hero-left .smol,
+    #service-hero .service-hero-left .xl-headline,
+    #service-hero .service-hero-left .content {
+        text-align: center;
+    }
+    #service-hero .service-hero-left .button {
+        display: inline-block;
+    }
+    #service-hero .service-hero-cards-image {
+        max-height: 400px;
+    }
+    #service-hero .service-hero-cards-image {
+        max-width: 50%
+    }
+}
+
+@media (max-width: 768px) {
+    #service-hero {
+        min-height: auto;
+    }
+    
+    #service-hero .service-hero-container {
+        padding-top: 20px;
+    }
+    
+    #service-hero .service-hero-left {
+        gap: 20px;
+        text-align: center;
+        align-items: center;
+    }
+    #service-hero .service-hero-left .smol,
+    #service-hero .service-hero-left .xl-headline,
+    #service-hero .service-hero-left .content {
+        text-align: center;
+    }
+    #service-hero .service-hero-left .button {
+        display: inline-block;
+    }
+    #service-hero .service-hero-cards-image {
+        max-width: 60%
+    }
+}
+@media (max-width: 425px) {
+    #service-hero .service-hero-cards-image {
+        max-width: 100%
+    }
+}
+
