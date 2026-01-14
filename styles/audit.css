@@ -23,13 +23,72 @@
     gap: 24px;
 }
 
-#audit .audit-left .headline {
-    max-width: 16ch;
-    color: #FFFFFF;
-}
 
 #audit .audit-description {
     max-width: 600px;
+}
+
+#audit .email-signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+    max-width: 500px;
+}
+
+#audit .email-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#audit .email-input {
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 12px 16px;
+    border: 1px solid #848484;
+    border-radius: 8px;
+    background-color: #1B1B1B;
+    transition: border-color 0.3s ease;
+    width: auto;
+    box-sizing: border-box;
+}
+
+#audit .email-input:focus {
+    outline: none;
+    border-color: #55E6A5;
+}
+
+#audit .email-input:-webkit-autofill,
+#audit .email-input:-webkit-autofill:hover,
+#audit .email-input:-webkit-autofill:focus,
+#audit .email-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1B1B1B inset !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    box-shadow: 0 0 0 30px #1B1B1B inset !important;
+    caret-color: #FFFFFF;
+}
+
+#audit .email-submit {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+    background-color: #55E6A5;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    width: auto;
+}
+
+#audit .email-submit:hover {
+    background-color: #32A873;
 }
 
 #audit .audit-right {
@@ -80,6 +139,16 @@
     }
     #audit .audit-left {
         gap: 20px;
+    }
+    #audit .email-input-wrapper {
+        flex-direction: column;
+    }
+    #audit .email-input {
+        width: 100%;
+        min-width: 100%;
+    }
+    #audit .email-submit {
+        width: 100%;
     }
 }
 

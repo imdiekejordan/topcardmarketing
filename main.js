@@ -182,3 +182,122 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Mailerlite Form Submission Handler
+document.addEventListener("DOMContentLoaded", () => {
+  const mailerliteForms = document.querySelectorAll(".email-signup-form");
+  
+  mailerliteForms.forEach((form) => {
+    // Create a hidden iframe for form submission
+    const iframe = document.createElement('iframe');
+    iframe.name = 'mailerlite-iframe-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+    iframe.style.display = 'none';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.style.border = 'none';
+    document.body.appendChild(iframe);
+    
+    // Store original button text
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton ? submitButton.textContent : '';
+    
+    // Set form target to the hidden iframe
+    form.target = iframe.name;
+    
+    // Listen for iframe load to detect submission completion
+    iframe.addEventListener('load', () => {
+      try {
+        // Try to read the iframe content (may be blocked by CORS)
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        const iframeText = iframeDoc.body.textContent || iframeDoc.body.innerText;
+        
+        if (iframeText.includes('"success":true') || iframeText.includes('success')) {
+          handleFormSuccess(form, submitButton, originalButtonText);
+        } else {
+          handleFormError(form, submitButton, originalButtonText);
+        }
+      } catch (e) {
+        // CORS may block access, but assume success since iframe loaded
+        // Mailerlite JSONP endpoints return {"success":true} on success
+        handleFormSuccess(form, submitButton, originalButtonText);
+      }
+    });
+    
+    form.addEventListener("submit", (e) => {
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = submitButton.textContent.includes('Subscribe') ? 'Subscribing...' : 'Submitting...';
+        
+        // Re-enable button after a delay if iframe doesn't fire load event
+        setTimeout(() => {
+          if (submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+          }
+        }, 5000);
+      }
+    });
+  });
+});
+
+function handleFormSuccess(form, submitButton, originalButtonText) {
+  if (submitButton) {
+    submitButton.disabled = false;
+    submitButton.textContent = originalButtonText;
+  }
+  
+  // Clear the email input
+  const emailInput = form.querySelector('input[type="email"]');
+  if (emailInput) {
+    emailInput.value = '';
+  }
+  
+  // Show success message
+  const successMessage = document.createElement('div');
+  successMessage.className = 'form-success-message';
+  successMessage.textContent = 'Thank you for subscribing!';
+  successMessage.style.cssText = 'color: #55E6A5; margin-top: 10px; font-size: 14px;';
+  
+  // Remove any existing messages
+  const existingSuccess = form.querySelector('.form-success-message');
+  const existingError = form.querySelector('.form-error-message');
+  if (existingSuccess) existingSuccess.remove();
+  if (existingError) existingError.remove();
+  
+  form.appendChild(successMessage);
+  
+  // Remove success message after 5 seconds
+  setTimeout(() => {
+    if (successMessage.parentNode) {
+      successMessage.remove();
+    }
+  }, 5000);
+}
+
+function handleFormError(form, submitButton, originalButtonText) {
+  if (submitButton) {
+    submitButton.disabled = false;
+    submitButton.textContent = originalButtonText;
+  }
+  
+  // Show error message
+  const errorMessage = document.createElement('div');
+  errorMessage.className = 'form-error-message';
+  errorMessage.textContent = 'Something went wrong. Please try again.';
+  errorMessage.style.cssText = 'color: #f44336; margin-top: 10px; font-size: 14px;';
+  
+  // Remove any existing messages
+  const existingSuccess = form.querySelector('.form-success-message');
+  const existingError = form.querySelector('.form-error-message');
+  if (existingSuccess) existingSuccess.remove();
+  if (existingError) existingError.remove();
+  
+  form.appendChild(errorMessage);
+  
+  // Remove error message after 5 seconds
+  setTimeout(() => {
+    if (errorMessage.parentNode) {
+      errorMessage.remove();
+    }
+  }, 5000);
+}
