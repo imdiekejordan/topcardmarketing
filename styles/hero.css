@@ -41,12 +41,18 @@
     justify-content: center;
 }
 
+#hero .hero-right picture {
+    width: 100%;
+    display: block;
+}
+
 #hero .hero-cards-image {
     width: 100%;
     max-width: 100%;
     max-height: 500px;
     height: auto;
     object-fit: contain;
+    display: block;
 }
 
 @media (max-width: 968px) {

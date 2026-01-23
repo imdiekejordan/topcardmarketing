@@ -36,11 +36,17 @@
     justify-content: center;
 }
 
+#cta .cta-right picture {
+    width: 100%;
+    display: block;
+}
+
 #cta .cta-image {
     width: 100%;
     max-width: 100%;
     height: auto;
     object-fit: contain;
+    display: block;
 }
 
 #cta .cta-video-container {
@@ -117,10 +123,26 @@
     
     #cta .cta-description {
         margin: 0 auto;
+        text-align: center;
+    }
+
+    #cta .cta-button {
+        margin: 0 auto;
     }
 
     #cta .cta-right {
         order: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #cta .cta-right picture {
+        margin: 0 auto;
+    }
+
+    #cta .cta-image {
+        margin: 0 auto;
     }
 }
 
